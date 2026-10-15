@@ -106,16 +106,40 @@
 
     <header class="sticky top-3 z-40 max-w-5xl mx-auto px-3 mb-6">
         <nav class="bg-white/90 dark:bg-warmSlate-800/90 backdrop-blur-md rounded-2xl px-4 py-2.5 flex items-center justify-between border border-stone-200/80 dark:border-stone-700/80 shadow-xs">
-            <!-- Navigation contents -->
-        </nav>
+            <!-- Logo & Title -->
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-xl bg-sage-500 text-white flex items-center justify-center font-bold text-sm shadow-xs shrink-0">
+                    <i data-lucide="code-2" class="w-4 h-4"></i>
+                </div>
+                <div class="truncate max-w-[120px] sm:max-w-none">
+                    <span class="font-bold text-sm tracking-tight text-stone-800 dark:text-stone-100 block leading-tight">DevCraft</span>
+                    <span class="text-[10px] text-sage-600 dark:text-sage-400 font-medium hidden sm:block">Software • Web • AI Models</span>
+                </div>
+            </a>
 
-        <!-- RESTORE THIS MOBILE MENU CONTAINER -->
-        <div id="mobileMenu" class="hidden md:hidden mt-2 p-3 bg-white/95 dark:bg-warmSlate-800/95 backdrop-blur-md rounded-2xl border border-stone-200/80 dark:border-stone-700/80 shadow-lg flex flex-col gap-1 text-xs font-semibold text-stone-700 dark:text-stone-200">
-            <a href="#services" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">Services &amp; Pricing</a>
-            <a href="#calculator" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">Quote Estimator</a>
-            <a href="#portfolio" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">Portfolio Demos</a>
-            <a href="#process" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">How It Works</a>
-        </div>
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex items-center gap-6 text-xs font-semibold text-stone-600 dark:text-stone-300">
+                <a href="#services" class="hover:text-sage-600 dark:hover:text-sage-400 transition-colors">Services &amp; Pricing</a>
+                <a href="#calculator" class="hover:text-sage-600 dark:hover:text-sage-400 transition-colors">Quote Estimator</a>
+                <a href="#portfolio" class="hover:text-sage-600 dark:hover:text-sage-400 transition-colors">Portfolio Demos</a>
+                <a href="#process" class="hover:text-sage-600 dark:hover:text-sage-400 transition-colors">How It Works</a>
+            </div>
+
+            <!-- Right Action Buttons -->
+            <div class="flex items-center gap-1.5 shrink-0">
+                <button id="themeToggle" aria-label="Toggle Theme" class="p-2 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-600 dark:text-stone-300 transition-colors">
+                    <i data-lucide="sun" id="themeIconSun" class="w-4 h-4 hidden"></i>
+                    <i data-lucide="moon" id="themeIconMoon" class="w-4 h-4"></i>
+                </button>
+                <button id="mobileMenuBtn" aria-label="Open Navigation Menu" class="md:hidden p-2 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-600 dark:text-stone-300 transition-colors">
+                    <i data-lucide="menu" id="menuIcon" class="w-4 h-4"></i>
+                </button>
+                <button onclick="openInquiryModal()" class="px-3 py-2 rounded-xl bg-sage-600 hover:bg-sage-700 text-white text-xs font-semibold shadow-xs transition-all flex items-center gap-1.5">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                    <span>Quote</span>
+                </button>
+            </div>
+        </nav>
     </header>
     <main class="relative z-10 max-w-5xl mx-auto px-4 pb-20 space-y-16">
 
@@ -706,16 +730,18 @@
             const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
             if (mobileMenuBtn && mobileMenu) {
-                mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     mobileMenu.classList.toggle('hidden');
                 });
 
+                // Close menu when clicking outside or selecting a link
                 mobileNavLinks.forEach(link => {
                     link.addEventListener('click', () => {
                         mobileMenu.classList.add('hidden');
                     });
                 });
-            }
+            } });
 
             // Category Filter Buttons
             const filterBtns = document.querySelectorAll('.filter-btn');
