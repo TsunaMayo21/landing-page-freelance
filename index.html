@@ -140,6 +140,13 @@
                 </button>
             </div>
         </nav>
+        <!--Mobile menu-->
+        <div id="mobileMenu" class="hidden md:hidden mt-2 p-3 bg-white/95 dark:bg-warmSlate-800/95 backdrop-blur-md rounded-2xl border border-stone-200/80 dark:border-stone-700/80 shadow-lg flex flex-col gap-1 text-xs font-semibold text-stone-700 dark:text-stone-200">
+        <a href="#services" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">Services &amp; Pricing</a>
+        <a href="#calculator" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">Quote Estimator</a>
+        <a href="#portfolio" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">Portfolio Demos</a>
+        <a href="#process" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">How It Works</a>
+    </div>
     </header>
     <main class="relative z-10 max-w-5xl mx-auto px-4 pb-20 space-y-16">
 
@@ -763,23 +770,21 @@
                 applyTheme(isDark);
             });
 
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        mobileMenu.classList.toggle('hidden');
-    });
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
 
-    // Close menu when clicking outside or selecting a link
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-    });
-}
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
 
             // Category Filter Buttons
             const filterBtns = document.querySelectorAll('.filter-btn');
