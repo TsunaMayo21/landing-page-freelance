@@ -104,18 +104,20 @@
         <div class="absolute bottom-20 left-10 w-96 h-96 bg-sky-100/60 rounded-full blur-3xl"></div>
     </div>
 
-    <header class="sticky top-4 z-40 max-w-5xl mx-auto px-4 mb-8">
-        <nav class="bg-white/85 dark:bg-warmSlate-800/85 backdrop-blur-md rounded-2xl px-5 py-3 flex items-center justify-between border border-stone-200/80 dark:border-stone-700/80 shadow-xs">
-            <a href="#" class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-xl bg-sage-500 text-white flex items-center justify-center font-bold text-sm shadow-xs">
+    <header class="sticky top-3 z-40 max-w-5xl mx-auto px-3 mb-6">
+        <nav class="bg-white/90 dark:bg-warmSlate-800/90 backdrop-blur-md rounded-2xl px-4 py-2.5 flex items-center justify-between border border-stone-200/80 dark:border-stone-700/80 shadow-xs">
+            <!-- Logo & Title -->
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-xl bg-sage-500 text-white flex items-center justify-center font-bold text-sm shadow-xs shrink-0">
                     <i data-lucide="code-2" class="w-4 h-4"></i>
                 </div>
-                <div>
-                    <span class="font-bold text-sm tracking-tight text-stone-800 dark:text-stone-100 block leading-none">DevCraft Services</span>
-                    <span class="text-[10px] text-sage-600 dark:text-sage-400 font-medium">Software • Web • AI Models</span>
+                <div class="truncate max-w-[120px] sm:max-w-none">
+                    <span class="font-bold text-sm tracking-tight text-stone-800 dark:text-stone-100 block leading-tight">DevCraft</span>
+                    <span class="text-[10px] text-sage-600 dark:text-sage-400 font-medium hidden sm:block">Software • Web • AI Models</span>
                 </div>
             </a>
 
+            <!-- Desktop Navigation Links -->
             <div class="hidden md:flex items-center gap-6 text-xs font-semibold text-stone-600 dark:text-stone-300">
                 <a href="#services" class="hover:text-sage-600 dark:hover:text-sage-400 transition-colors">Services &amp; Pricing</a>
                 <a href="#calculator" class="hover:text-sage-600 dark:hover:text-sage-400 transition-colors">Quote Estimator</a>
@@ -123,97 +125,49 @@
                 <a href="#process" class="hover:text-sage-600 dark:hover:text-sage-400 transition-colors">How It Works</a>
             </div>
 
-            <div class="flex items-center gap-2">
-                <!-- Theme Toggle Button -->
-                <button id="themeToggle" class="p-2 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-600 dark:text-stone-300 transition-colors" title="Toggle Theme">
+            <!-- Right Action Buttons -->
+            <div class="flex items-center gap-1.5 shrink-0">
+                <button id="themeToggle" aria-label="Toggle Theme" class="p-2 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-600 dark:text-stone-300 transition-colors">
                     <i data-lucide="sun" id="themeIconSun" class="w-4 h-4 hidden"></i>
                     <i data-lucide="moon" id="themeIconMoon" class="w-4 h-4"></i>
                 </button>
-                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-600 dark:text-stone-300 transition-colors" title="Toggle Navigation Menu">
+                <button id="mobileMenuBtn" aria-label="Open Navigation Menu" class="md:hidden p-2 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-600 dark:text-stone-300 transition-colors">
                     <i data-lucide="menu" id="menuIcon" class="w-4 h-4"></i>
                 </button>
-                <!-- Book Inquiry Button -->
-                <button onclick="openInquiryModal()" class="px-3.5 py-2 rounded-xl bg-sage-600 hover:bg-sage-700 text-white text-xs font-semibold shadow-xs transition-all flex items-center gap-1.5">
+                <button onclick="openInquiryModal()" class="px-3 py-2 rounded-xl bg-sage-600 hover:bg-sage-700 text-white text-xs font-semibold shadow-xs transition-all flex items-center gap-1.5">
                     <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-                    <span class="hidden sm:inline">Get Free Quote</span>
-                    <span class="sm:hidden">Quote</span>
+                    <span>Quote</span>
                 </button>
             </div>
         </nav>
-
-        <div id="mobileMenu" class="hidden md:hidden mt-2 p-3 bg-white/95 dark:bg-warmSlate-800/95 backdrop-blur-md rounded-2xl border border-stone-200/80 dark:border-stone-700/80 shadow-lg flex flex-col gap-1 text-xs font-semibold text-stone-700 dark:text-stone-200">
-            <a href="#services" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">Services &amp; Pricing</a>
-            <a href="#calculator" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">Quote Estimator</a>
-            <a href="#portfolio" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">Portfolio Demos</a>
-            <a href="#process" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">How It Works</a>
-        </div>
     </header>
-
     <main class="relative z-10 max-w-5xl mx-auto px-4 pb-20 space-y-16">
 
-        <section class="text-center pt-4 md:pt-8 max-w-3xl mx-auto">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sage-100/80 dark:bg-sage-900/40 border border-sage-200/80 dark:border-sage-800/60 text-sage-700 dark:text-sage-300 text-xs font-semibold mb-5">
-                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Open for Freelance Projects &amp; Academic Consultations</span>
+        <section class="text-center pt-2 md:pt-6 max-w-3xl mx-auto px-2">
+            <!-- Responsive Pill Badge -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage-100/80 dark:bg-sage-900/40 border border-sage-200/80 dark:border-sage-800/60 text-sage-800 dark:text-sage-300 text-[11px] font-semibold mb-4">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+                <span>Open for Freelance &amp; Academic Projects</span>
             </div>
 
-            <h1 class="text-3xl sm:text-5xl font-extrabold text-stone-900 dark:text-stone-100 tracking-tight leading-tight">
+            <!-- Cleaned Main Title -->
+            <h1 class="text-2xl sm:text-5xl font-extrabold text-stone-900 dark:text-stone-100 tracking-tight leading-snug sm:leading-tight">
                 Crafting Reliable <span class="text-sage-600 dark:text-sage-400 underline decoration-sage-300 dark:decoration-sage-700 decoration-wavy decoration-2">Web Apps</span>, <span class="text-amber-600 dark:text-amber-400">AI Models</span> &amp; Systems
             </h1>
 
-            <p class="text-sm sm:text-base text-stone-600 dark:text-stone-400 mt-4 max-w-2xl mx-auto leading-relaxed font-normal">
+            <p class="text-xs sm:text-base text-stone-600 dark:text-stone-400 mt-3 max-w-2xl mx-auto leading-relaxed font-normal px-2">
                 Affordable, human-crafted engineering solutions tailored for small businesses, startups, and university students. Clear deliverables with transparent upfront pricing in Ringgit Malaysia (RM).
             </p>
 
-            <div class="flex flex-wrap items-center justify-center gap-3 mt-7">
-                <a href="#services" class="px-5 py-3 rounded-xl bg-sage-600 hover:bg-sage-700 text-white text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-2.5 mt-6 px-4">
+                <a href="#services" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-sage-600 hover:bg-sage-700 text-white text-xs sm:text-sm font-semibold shadow-md transition-all flex items-center justify-center gap-2">
                     <i data-lucide="layers" class="w-4 h-4"></i>
                     <span>Browse Service Offerings</span>
                 </a>
-                <a href="#calculator" class="px-5 py-3 rounded-xl bg-white dark:bg-warmSlate-800 border border-stone-200/90 dark:border-stone-700 text-stone-700 dark:text-stone-200 text-xs sm:text-sm font-semibold hover:bg-stone-50 dark:hover:bg-stone-750 transition-all flex items-center gap-2">
+                <a href="#calculator" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-white dark:bg-warmSlate-800 border border-stone-200/90 dark:border-stone-700 text-stone-700 dark:text-stone-200 text-xs sm:text-sm font-semibold hover:bg-stone-50 dark:hover:bg-stone-750 transition-all flex items-center justify-center gap-2">
                     <i data-lucide="calculator" class="w-4 h-4 text-amber-600"></i>
                     <span>Calculate Project Cost</span>
                 </a>
-            </div>
-
-            <!-- Trust Badges Bar -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-10 text-left">
-                <div class="p-3 rounded-xl bg-white/70 dark:bg-warmSlate-800/70 border border-stone-200/80 dark:border-stone-700/80 flex items-center gap-2.5">
-                    <div class="p-2 rounded-lg bg-amber-100 dark:bg-amber-950/50 text-amber-600 dark:text-amber-400 shrink-0">
-                        <i data-lucide="sparkles" class="w-4 h-4"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-stone-800 dark:text-stone-200">AI-Related Projects</p>
-                        <p class="text-[10px] text-stone-500 dark:text-stone-400">ML models &amp; research available</p>
-                    </div>
-                </div>
-                <div class="p-3 rounded-xl bg-white/70 dark:bg-warmSlate-800/70 border border-stone-200/80 dark:border-stone-700/80 flex items-center gap-2.5">
-                    <div class="p-2 rounded-lg bg-amber-100 dark:bg-amber-950/50 text-amber-600 dark:text-amber-400 shrink-0">
-                        <i data-lucide="database" class="w-4 h-4"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-stone-800 dark:text-stone-200">Database Options</p>
-                        <p class="text-[10px] text-stone-500 dark:text-stone-400">Scalable data store</p>
-                    </div>
-                </div>
-                <div class="p-3 rounded-xl bg-white/70 dark:bg-warmSlate-800/70 border border-stone-200/80 dark:border-stone-700/80 flex items-center gap-2.5">
-                    <div class="p-2 rounded-lg bg-sky-100 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 shrink-0">
-                        <i data-lucide="code" class="w-4 h-4"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-stone-800 dark:text-stone-200">Full Source Code</p>
-                        <p class="text-[10px] text-stone-500 dark:text-stone-400">100% IP ownership</p>
-                    </div>
-                </div>
-                <div class="p-3 rounded-xl bg-white/70 dark:bg-warmSlate-800/70 border border-stone-200/80 dark:border-stone-700/80 flex items-center gap-2.5">
-                    <div class="p-2 rounded-lg bg-purple-100 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400 shrink-0">
-                        <i data-lucide="shield-check" class="w-4 h-4"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-stone-800 dark:text-stone-200">Post-Launch Help</p>
-                        <p class="text-[10px] text-stone-500 dark:text-stone-400">Free bug fixes</p>
-                    </div>
-                </div>
             </div>
         </section>
 
