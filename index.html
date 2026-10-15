@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" class="light">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software, Web & AI Engineering Services</title>
+    <title>DevCraft Engineering Services | Web, Software & AI Solutions</title>
+
+    <!-- Essential SEO Meta Tags -->
+    <meta name="description" content="Affordable software, web development, and AI engineering services tailored for small businesses, startups, and academic consultations in Malaysia.">
+    <link rel="canonical" href="https://landing-page-freelance.pages.dev/">
+
+    <!-- Open Graph Meta Tags (For clean general link previews) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://landing-page-freelance.pages.dev/">
+    <meta property="og:title" content="DevCraft Services — Custom Web Apps, AI Models & Systems">
+    <meta property="og:description" content="Affordable, human-crafted engineering solutions with transparent upfront pricing in Ringgit Malaysia (RM).">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -39,28 +49,24 @@
             }
         }
     </script>
-    <!-- Google Fonts: Plus Jakarta Sans for a clean human aesthetic -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Add defer attribute -->
-    <script src="https://unpkg.com/lucide@latest" defer></script>
-    <!-- Add preconnect to establish early server connection -->
+
+    <!-- Font Preconnect & Async Load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Load font with non-blocking media swap -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     </noscript>
+
+    <!-- Lucide Icons (Deferred) -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Soft Human Card Hover Effects */
         .soft-card {
             transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -73,14 +79,12 @@
             box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.4);
         }
 
-        /* Active Filter Tab */
         .filter-btn.active {
             background-color: #5B7E5E;
             color: #ffffff;
             box-shadow: 0 4px 14px rgba(91, 126, 94, 0.25);
         }
 
-        /* Custom subtle scrollbar */
         ::-webkit-scrollbar {
             width: 6px;
         }
@@ -106,7 +110,6 @@
 
     <header class="sticky top-3 z-40 max-w-5xl mx-auto px-3 mb-6">
         <nav class="bg-white/90 dark:bg-warmSlate-800/90 backdrop-blur-md rounded-2xl px-4 py-2.5 flex items-center justify-between border border-stone-200/80 dark:border-stone-700/80 shadow-xs">
-            <!-- Logo & Title -->
             <a href="#" class="flex items-center gap-2">
                 <div class="w-8 h-8 rounded-xl bg-sage-500 text-white flex items-center justify-center font-bold text-sm shadow-xs shrink-0">
                     <i data-lucide="code-2" class="w-4 h-4"></i>
@@ -117,7 +120,6 @@
                 </div>
             </a>
 
-            <!-- Desktop Navigation Links -->
             <div class="hidden md:flex items-center gap-6 text-xs font-semibold text-stone-600 dark:text-stone-300">
                 <a href="#services" class="hover:text-sage-600 dark:hover:text-sage-400 transition-colors">Services &amp; Pricing</a>
                 <a href="#calculator" class="hover:text-sage-600 dark:hover:text-sage-400 transition-colors">Quote Estimator</a>
@@ -125,7 +127,6 @@
                 <a href="#process" class="hover:text-sage-600 dark:hover:text-sage-400 transition-colors">How It Works</a>
             </div>
 
-            <!-- Right Action Buttons -->
             <div class="flex items-center gap-1.5 shrink-0">
                 <button id="themeToggle" aria-label="Toggle Theme" class="p-2 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-600 dark:text-stone-300 transition-colors">
                     <i data-lucide="sun" id="themeIconSun" class="w-4 h-4 hidden"></i>
@@ -134,42 +135,43 @@
                 <button id="mobileMenuBtn" aria-label="Open Navigation Menu" class="md:hidden p-2 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-600 dark:text-stone-300 transition-colors">
                     <i data-lucide="menu" id="menuIcon" class="w-4 h-4"></i>
                 </button>
-                <button onclick="openInquiryModal()" class="px-3 py-2 rounded-xl bg-sage-600 hover:bg-sage-700 text-white text-xs font-semibold shadow-xs transition-all flex items-center gap-1.5">
+                <button onclick="openInquiryModal()" aria-label="Get Free Quote" class="px-3 py-2 rounded-xl bg-sage-600 hover:bg-sage-700 text-white text-xs font-semibold shadow-xs transition-all flex items-center gap-1.5">
                     <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
                     <span>Quote</span>
                 </button>
             </div>
         </nav>
-        <!--Mobile menu-->
+
         <div id="mobileMenu" class="hidden md:hidden mt-2 p-3 bg-white/95 dark:bg-warmSlate-800/95 backdrop-blur-md rounded-2xl border border-stone-200/80 dark:border-stone-700/80 shadow-lg flex flex-col gap-1 text-xs font-semibold text-stone-700 dark:text-stone-200">
-        <a href="#services" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">Services &amp; Pricing</a>
-        <a href="#calculator" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">Quote Estimator</a>
-        <a href="#portfolio" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">Portfolio Demos</a>
-        <a href="#process" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">How It Works</a>
-    </div>
+            <a href="#services" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">Services &amp; Pricing</a>
+            <a href="#calculator" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">Quote Estimator</a>
+            <a href="#portfolio" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">Portfolio Demos</a>
+            <a href="#process" class="mobile-nav-link py-2.5 px-3 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-700/80 transition-colors">How It Works</a>
+        </div>
     </header>
+
     <main class="relative z-10 max-w-5xl mx-auto px-4 pb-20 space-y-16">
 
-        <section class="text-center pt-4 md:pt-8 max-w-3xl mx-auto">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sage-100/80 dark:bg-sage-900/40 border border-sage-200/80 dark:border-sage-800/60 text-sage-700 dark:text-sage-300 text-xs font-semibold mb-5">
-                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Open for Freelance Projects &amp; Academic Consultations</span>
+        <section class="text-center pt-2 md:pt-6 max-w-3xl mx-auto px-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage-100/80 dark:bg-sage-900/40 border border-sage-200/80 dark:border-sage-800/60 text-sage-800 dark:text-sage-300 text-[11px] font-semibold mb-4">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+                <span>Open for Freelance &amp; Academic Projects</span>
             </div>
 
-            <h1 class="text-3xl sm:text-5xl font-extrabold text-stone-900 dark:text-stone-100 tracking-tight leading-tight">
+            <h1 class="text-2xl sm:text-5xl font-extrabold text-stone-900 dark:text-stone-100 tracking-tight leading-snug sm:leading-tight">
                 Crafting Reliable <span class="text-sage-600 dark:text-sage-400 underline decoration-sage-300 dark:decoration-sage-700 decoration-wavy decoration-2">Web Apps</span>, <span class="text-amber-600 dark:text-amber-400">AI Models</span> &amp; Systems
             </h1>
 
-            <p class="text-sm sm:text-base text-stone-600 dark:text-stone-400 mt-4 max-w-2xl mx-auto leading-relaxed font-normal">
+            <p class="text-xs sm:text-base text-stone-600 dark:text-stone-400 mt-3 max-w-2xl mx-auto leading-relaxed font-normal px-2">
                 Affordable, human-crafted engineering solutions tailored for small businesses, startups, and university students. Clear deliverables with transparent upfront pricing in Ringgit Malaysia (RM).
             </p>
 
-            <div class="flex flex-wrap items-center justify-center gap-3 mt-7">
-                <a href="#services" class="px-5 py-3 rounded-xl bg-sage-600 hover:bg-sage-700 text-white text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-2.5 mt-6 px-4">
+                <a href="#services" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-sage-600 hover:bg-sage-700 text-white text-xs sm:text-sm font-semibold shadow-md transition-all flex items-center justify-center gap-2">
                     <i data-lucide="layers" class="w-4 h-4"></i>
                     <span>Browse Service Offerings</span>
                 </a>
-                <a href="#calculator" class="px-5 py-3 rounded-xl bg-white dark:bg-warmSlate-800 border border-stone-200/90 dark:border-stone-700 text-stone-700 dark:text-stone-200 text-xs sm:text-sm font-semibold hover:bg-stone-50 dark:hover:bg-stone-750 transition-all flex items-center gap-2">
+                <a href="#calculator" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-white dark:bg-warmSlate-800 border border-stone-200/90 dark:border-stone-700 text-stone-700 dark:text-stone-200 text-xs sm:text-sm font-semibold hover:bg-stone-50 dark:hover:bg-stone-750 transition-all flex items-center justify-center gap-2">
                     <i data-lucide="calculator" class="w-4 h-4 text-amber-600"></i>
                     <span>Calculate Project Cost</span>
                 </a>
@@ -183,7 +185,7 @@
                     </div>
                     <div>
                         <p class="text-xs font-bold text-stone-800 dark:text-stone-200">AI-Related Projects</p>
-                        <p class="text-[10px] text-stone-500 dark:text-stone-400">ML models &amp; research available</p>
+                        <p class="text-[10px] text-stone-600 dark:text-stone-400">ML models &amp; research available</p>
                     </div>
                 </div>
                 <div class="p-3 rounded-xl bg-white/70 dark:bg-warmSlate-800/70 border border-stone-200/80 dark:border-stone-700/80 flex items-center gap-2.5">
@@ -192,7 +194,7 @@
                     </div>
                     <div>
                         <p class="text-xs font-bold text-stone-800 dark:text-stone-200">Database Options</p>
-                        <p class="text-[10px] text-stone-500 dark:text-stone-400">Scalable data store</p>
+                        <p class="text-[10px] text-stone-600 dark:text-stone-400">Scalable data store</p>
                     </div>
                 </div>
                 <div class="p-3 rounded-xl bg-white/70 dark:bg-warmSlate-800/70 border border-stone-200/80 dark:border-stone-700/80 flex items-center gap-2.5">
@@ -201,7 +203,7 @@
                     </div>
                     <div>
                         <p class="text-xs font-bold text-stone-800 dark:text-stone-200">Full Source Code</p>
-                        <p class="text-[10px] text-stone-500 dark:text-stone-400">100% IP ownership</p>
+                        <p class="text-[10px] text-stone-600 dark:text-stone-400">100% IP ownership</p>
                     </div>
                 </div>
                 <div class="p-3 rounded-xl bg-white/70 dark:bg-warmSlate-800/70 border border-stone-200/80 dark:border-stone-700/80 flex items-center gap-2.5">
@@ -210,7 +212,7 @@
                     </div>
                     <div>
                         <p class="text-xs font-bold text-stone-800 dark:text-stone-200">Post-Launch Help</p>
-                        <p class="text-[10px] text-stone-500 dark:text-stone-400">Free bug fixes</p>
+                        <p class="text-[10px] text-stone-600 dark:text-stone-400">Free bug fixes</p>
                     </div>
                 </div>
             </div>
@@ -225,7 +227,6 @@
                     </h2>
                 </div>
 
-                <!-- Category Filters -->
                 <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs no-scrollbar">
                     <button class="filter-btn active px-3 py-1.5 rounded-xl font-medium text-stone-600 dark:text-stone-300 bg-white dark:bg-warmSlate-800 border border-stone-200/80 dark:border-stone-700 transition-all whitespace-nowrap" data-category="all">
                         All Services
@@ -242,10 +243,9 @@
                 </div>
             </div>
 
-            <!-- Service Pricing Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="servicesGrid">
 
-                <!-- SERVICE 1: LANDING PAGE -->
+                <!-- SERVICE 1 -->
                 <div class="soft-card service-card p-5 rounded-2xl bg-white dark:bg-warmSlate-800 border border-sage-300/80 dark:border-sage-700/80 ring-1 ring-sage-500/10 flex flex-col justify-between relative overflow-hidden" data-category="web">
                     <div class="absolute top-0 right-0 bg-sage-500 text-white text-[10px] font-bold px-3 py-0.5 rounded-bl-xl uppercase tracking-wide">
                         Most Popular
@@ -285,7 +285,7 @@
                     </div>
                 </div>
 
-                <!-- SERVICE 2: SAAS ERP SYSTEM -->
+                <!-- SERVICE 2 -->
                 <div class="soft-card service-card p-5 rounded-2xl bg-white dark:bg-warmSlate-800 border border-stone-200/90 dark:border-stone-700/80 flex flex-col justify-between" data-category="web">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -328,7 +328,7 @@
                     </div>
                 </div>
 
-                <!-- SERVICE 3: DEMO MOBILE APP IN WEB -->
+                <!-- SERVICE 3 -->
                 <div class="soft-card service-card p-5 rounded-2xl bg-white dark:bg-warmSlate-800 border border-stone-200/90 dark:border-stone-700/80 flex flex-col justify-between" data-category="academic web">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -365,7 +365,7 @@
                     </div>
                 </div>
 
-                <!-- SERVICE 4: MACHINE LEARNING MODEL -->
+                <!-- SERVICE 4 -->
                 <div class="soft-card service-card p-5 rounded-2xl bg-amber-50/40 dark:bg-amber-950/20 border border-amber-200/90 dark:border-amber-800/40 flex flex-col justify-between" data-category="ai">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -402,7 +402,7 @@
                     </div>
                 </div>
 
-                <!-- SERVICE 5: POWER BI DESIGN -->
+                <!-- SERVICE 5 -->
                 <div class="soft-card service-card p-5 rounded-2xl bg-white dark:bg-warmSlate-800 border border-stone-200/90 dark:border-stone-700/80 flex flex-col justify-between" data-category="ai">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -441,7 +441,7 @@
                     </div>
                 </div>
 
-                <!-- SERVICE 6: UNIVERSITY SOFTWARE PROJECT -->
+                <!-- SERVICE 6 -->
                 <div class="soft-card service-card p-5 rounded-2xl bg-white dark:bg-warmSlate-800 border border-stone-200/90 dark:border-stone-700/80 flex flex-col justify-between" data-category="academic">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -511,7 +511,6 @@
                         <span class="font-bold text-stone-600 dark:text-stone-300">RM 200</span>
                     </label>
 
-                    <!-- Database addon option -->
                     <label class="p-3.5 rounded-2xl bg-sage-50/50 dark:bg-sage-950/20 border border-sage-200 dark:border-sage-800/60 flex items-center justify-between cursor-pointer ml-4">
                         <div class="flex items-center gap-3">
                             <input type="checkbox" class="calc-check w-4 h-4 accent-sage-600" data-price="100" id="dbAddon" value="Database Integration Addon (+RM100)">
@@ -543,7 +542,6 @@
                     </label>
                 </div>
 
-                <!-- Estimated Price Total Box -->
                 <div class="mt-6 p-4 rounded-2xl bg-cream-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-700 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div>
                         <span class="text-[11px] font-semibold text-stone-500 uppercase tracking-wider block">Estimated Total Budget</span>
@@ -567,7 +565,6 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-                <!-- Demo 1 -->
                 <a href="https://pharmacy-v3.onrender.com/frontend/login.html" target="_blank" class="soft-card block p-4 rounded-2xl bg-white dark:bg-warmSlate-800 border border-emerald-200/80 dark:border-emerald-800/40 group">
                     <div class="flex items-start justify-between gap-3">
                         <div class="flex gap-3.5">
@@ -584,7 +581,6 @@
                     </div>
                 </a>
 
-                <!-- Demo 2 -->
                 <a href="https://gold-alchemy.onrender.com/" target="_blank" class="soft-card block p-4 rounded-2xl bg-white dark:bg-warmSlate-800 border border-amber-200/80 dark:border-amber-800/40 group">
                     <div class="flex items-start justify-between gap-3">
                         <div class="flex gap-3.5">
@@ -601,7 +597,6 @@
                     </div>
                 </a>
 
-                <!-- Demo 3 -->
                 <a href="https://finance-app-web-sample.pages.dev/" target="_blank" class="soft-card block p-4 rounded-2xl bg-white dark:bg-warmSlate-800 border border-sky-200/80 dark:border-sky-800/40 group">
                     <div class="flex items-start justify-between gap-3">
                         <div class="flex gap-3.5">
@@ -618,7 +613,6 @@
                     </div>
                 </a>
 
-                <!-- Demo 4 -->
                 <a href="https://my-portfolio-cog.pages.dev/template1" target="_blank" class="soft-card block p-4 rounded-2xl bg-white dark:bg-warmSlate-800 border border-sage-200/80 dark:border-sage-800/40 group">
                     <div class="flex items-start justify-between gap-3">
                         <div class="flex gap-3.5">
@@ -628,7 +622,7 @@
                             <div>
                                 <h3 class="font-semibold text-stone-800 dark:text-stone-100 text-sm group-hover:text-sage-600 transition-colors">Full Portfolio Webpage</h3>
                                 <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Explore my complete biography, background experience, and projects.</p>
-                                <span class="bg-emerald-100 text-slate-700 dark:text-slate-700 px-3 py-1 rounded-full text-xs font-semibold"> Main Webpage</span>
+                                <span class="bg-emerald-100 text-slate-900 dark:text-slate-900 px-3 py-1 rounded-full text-xs font-semibold"> Main Webpage</span>
                             </div>
                         </div>
                         <i data-lucide="arrow-up-right" class="w-4 h-4 text-stone-400 group-hover:text-sage-600 shrink-0"></i>
@@ -680,9 +674,9 @@
             </div>
             <p>© <span id="year"></span> • Designed with clarity and warm human aesthetics</p>
             <div class="flex items-center gap-3">
-                <a href="https://github.com/TsunaMayo21" target="_blank" class="hover:text-stone-900 dark:hover:text-white"><i data-lucide="github" class="w-4 h-4"></i></a>
-                <a href="https://www.linkedin.com/in/abdul-qayyuum-9883b127b" target="_blank" class="hover:text-stone-900 dark:hover:text-white"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                <a href="mailto:abdulqayyuum21@gmail.com" class="hover:text-stone-900 dark:hover:text-white"><i data-lucide="mail" class="w-4 h-4"></i></a>
+                <a href="https://github.com/TsunaMayo21" target="_blank" aria-label="GitHub Profile" class="hover:text-stone-900 dark:hover:text-white"><i data-lucide="github" class="w-4 h-4"></i></a>
+                <a href="https://www.linkedin.com/in/abdul-qayyuum-9883b127b" target="_blank" aria-label="LinkedIn Profile" class="hover:text-stone-900 dark:hover:text-white"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                <a href="mailto:abdulqayyuum21@gmail.com" aria-label="Email Contact" class="hover:text-stone-900 dark:hover:text-white"><i data-lucide="mail" class="w-4 h-4"></i></a>
             </div>
         </div>
     </footer>
@@ -695,16 +689,13 @@
                     <i data-lucide="mail" class="w-4 h-4 text-sage-600"></i>
                     Send Project Inquiry
                 </h3>
-                <button onclick="closeInquiryModal()" class="text-stone-400 hover:text-stone-600 dark:hover:text-stone-200 p-1">
+                <button onclick="closeInquiryModal()" aria-label="Close Modal" class="text-stone-400 hover:text-stone-600 dark:hover:text-stone-200 p-1">
                     <i data-lucide="x" class="w-4 h-4"></i>
                 </button>
             </div>
 
             <form action="https://api.web3forms.com/submit" method="POST" id="inquiryForm" class="space-y-3 text-xs">
-                <!-- Web3Forms Access Key (Get yours free at https://web3forms.com) -->
                 <input type="hidden" name="access_key" value="d1ed3763-7448-4c3e-86da-43853cfb0a24">
-
-                <!-- Optional: Redirect back or subject line configuration -->
                 <input type="hidden" name="subject" value="New Project Inquiry from DevCraft Services">
 
                 <div>
@@ -742,13 +733,12 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Initialize Lucide Icons
-            lucide.createIcons();
+            if (window.lucide) {
+                lucide.createIcons();
+            }
 
-            // Set current year
             document.getElementById('year').textContent = new Date().getFullYear();
 
-            // Dark Mode Switcher
             const themeToggle = document.getElementById('themeToggle');
             const sunIcon = document.getElementById('themeIconSun');
             const moonIcon = document.getElementById('themeIconMoon');
@@ -775,7 +765,8 @@
             const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
             if (mobileMenuBtn && mobileMenu) {
-                mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     mobileMenu.classList.toggle('hidden');
                 });
 
@@ -786,7 +777,6 @@
                 });
             }
 
-            // Category Filter Buttons
             const filterBtns = document.querySelectorAll('.filter-btn');
             const serviceCards = document.querySelectorAll('.service-card');
 
@@ -808,11 +798,8 @@
                 });
             });
 
-            // Interactive Calculator Logic
             const calcChecks = document.querySelectorAll('.calc-check');
             const totalText = document.getElementById('totalEstimateText');
-            const erpCheck = document.getElementById('erpCheck');
-            const dbAddon = document.getElementById('dbAddon');
 
             function recalculateTotal() {
                 let total = 0;
@@ -830,7 +817,6 @@
             });
         });
 
-        // Modal Functions
         function openInquiryModal() {
             const modal = document.getElementById('inquiryModal');
             const content = document.getElementById('inquiryModalContent');
@@ -883,14 +869,6 @@
             document.getElementById('modalService').value = `Estimated Total: RM ${total}`;
             document.getElementById('modalDetails').value = `Selected Services:\n- ` + selected.join('\n- ');
             openInquiryModal();
-        }
-
-
-        function handleInquirySubmit(e) {
-            // Let Web3Forms handle the backend submission natively, 
-            // or keep it default so it forwards submissions smoothly to your email.
-            closeInquiryModal();
-            showToast('Redirecting securely to send inquiry...');
         }
     </script>
 </body>
